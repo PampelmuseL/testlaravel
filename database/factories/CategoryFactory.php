@@ -19,7 +19,7 @@ class CategoryFactory extends Factory
     {
         return [
             'title' => fake()->sentence(),
-            'parent_id' => 0,
+            'parent_id' => mt_rand(0, Category::all()->count()),
         ];
     }
 }
