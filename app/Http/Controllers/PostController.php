@@ -7,12 +7,12 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    public function index()
+    public function index(): string
     {
-        return response()->json(csrf_token());
+        return "Страница постов";
     }
 
-    public function store()
+    public function store(): object
     {
         $post = new Post();
         $post->title = request('title');
@@ -21,7 +21,7 @@ class PostController extends Controller
         $post->category_id = request('category_id');
         $post->price = request('price');
         $post->status = request('status');
-        $post = $post->save();
+        $post->save();
 
         return response()->json($post);
     }
