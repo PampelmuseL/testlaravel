@@ -12,7 +12,7 @@ class PostController extends Controller
         return "Страница постов";
     }
 
-    public function store(): object
+    public function store(): \Illuminate\Http\JsonResponse
     {
         $post = new Post();
         $post->title = request('title');
